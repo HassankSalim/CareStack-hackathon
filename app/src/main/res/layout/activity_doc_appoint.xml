@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_doc_appoint"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1.0"
+    android:orientation="vertical"
+    tools:context="hassan.docappoint.DocAppointActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:weightSum="1.0"
+        android:layout_weight="0.2">
+
+        <Button
+            android:layout_width="0dp"
+            android:id="@+id/doc_app"
+            android:text="View Doc app"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:id="@+id/sch"
+            android:text="View Doc app"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"/>
+
+
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/my_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        android:scrollbars="vertical" />
+
+</LinearLayout>
