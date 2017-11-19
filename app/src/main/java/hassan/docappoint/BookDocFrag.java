@@ -41,7 +41,7 @@ public class BookDocFrag  extends Fragment {
 
     //Network calls
     private ProgressDialog mProgressDialog;
-    String baseUrl = "http://ec2-13-58-90-106.us-east-2.compute.amazonaws.com/";
+    String baseUrl = "http://ec2-13-58-90-106.us-east-2.compute.amazonaws.com/api/";
     ArrayList<DocDetails> docDetails;
 
     private RecyclerView mRecycler;
