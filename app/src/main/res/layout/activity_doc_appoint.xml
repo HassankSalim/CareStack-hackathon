@@ -19,14 +19,21 @@
             android:id="@+id/doc_app"
             android:text="View Doc app"
             android:layout_height="match_parent"
-            android:layout_weight="0.5"/>
+            android:layout_weight="0.3"/>
 
         <Button
             android:layout_width="0dp"
             android:id="@+id/sch"
             android:text="View Doc app"
             android:layout_height="match_parent"
-            android:layout_weight="0.5"/>
+            android:layout_weight="0.3"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:id="@+id/appointment"
+            android:text="View Doc app"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"/>
 
 
 

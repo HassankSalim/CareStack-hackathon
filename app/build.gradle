@@ -30,6 +30,8 @@ dependencies {
     compile 'de.hdodenhof:circleimageview:2.2.0'
     compile 'com.mcxiaoke.volley:library:1.0.19'
     compile 'com.android.support:design:26.0.0-alpha1'
+    compile 'com.timehop.stickyheadersrecyclerview:library:[0.4.3]@aar'
+    compile 'se.emilsjolander:stickylistheaders:2.7.0'
     testCompile 'junit:junit:4.12'
 }
 configurations.all {

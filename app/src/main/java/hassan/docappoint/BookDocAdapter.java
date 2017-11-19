@@ -19,16 +19,16 @@ import java.util.List;
  * Copyright (c) 2017 Sergej Kravcenko
  */
 
-public class SampleAdapter extends StickyHeaderGridAdapter {
+public class BookDocAdapter extends StickyHeaderGridAdapter {
    private List<List<String>> labels;
 
-   public SampleAdapter(ArrayList<DocDetails> docDetails) {
+   public BookDocAdapter(ArrayList<DocDetails> docDetails) {
       this.docDetails = docDetails;
    }
 
    private ArrayList<DocDetails> docDetails;
 
-   SampleAdapter(int sections, int count) {
+   BookDocAdapter(int sections, int count) {
       labels = new ArrayList<>(sections);
       for (int s = 4; s < sections; ++s) {
          List<String> labels = new ArrayList<>(count);
@@ -96,8 +96,12 @@ public class SampleAdapter extends StickyHeaderGridAdapter {
                final int offset = getItemSectionOffset(section, holder.getAdapterPosition());
 
 //               docDetails.get(section).remove(offset);
-               notifySectionItemRemoved(section, offset);
-               Toast.makeText(holder.dayView.getContext(), days, Toast.LENGTH_SHORT).show();
+//               notifySectionItemRemoved(section, offset);
+               String day = docDetails.get(section).getDays().get(offset);
+               String time = docDetails.get(section).getTimes().get(offset);
+               String docName = docDetails.get(section).getDocName();
+               Toast.makeText(holder.dayView.getContext(), day+" "+time+" "+docName, Toast.LENGTH_SHORT).show();
+
            }
        });
       holder.dayView.setOnClickListener(new View.OnClickListener() {
@@ -107,8 +111,11 @@ public class SampleAdapter extends StickyHeaderGridAdapter {
             final int offset = getItemSectionOffset(section, holder.getAdapterPosition());
 
 //            docDetails.get(section).remove(offset);
-            notifySectionItemRemoved(section, offset);
-            Toast.makeText(holder.dayView.getContext(), days, Toast.LENGTH_SHORT).show();
+//            notifySectionItemRemoved(section, offset);
+            String day = docDetails.get(section).getDays().get(offset);
+            String time = docDetails.get(section).getTimes().get(offset);
+            String docName = docDetails.get(section).getDocName();
+            Toast.makeText(holder.dayView.getContext(), day+" "+time+" "+docName, Toast.LENGTH_SHORT).show();
          }
       });
    }

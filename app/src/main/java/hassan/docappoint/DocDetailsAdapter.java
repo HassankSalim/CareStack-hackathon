@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,6 +15,7 @@ import java.util.List;
 
 public class DocDetailsAdapter extends RecyclerView.Adapter<DocDetailsAdapter.ViewHolder> {
     private List<String> values;
+    private ArrayList<AppoinmentDetails> appDetails;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -43,8 +45,12 @@ public class DocDetailsAdapter extends RecyclerView.Adapter<DocDetailsAdapter.Vi
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public DocDetailsAdapter(List<String> myDataset) {
-        values = myDataset;
+//    public DocDetailsAdapter(List<String> myDataset) {
+//        values = myDataset;
+//    }
+
+    public DocDetailsAdapter(ArrayList<AppoinmentDetails> appDetails){
+        this.appDetails = appDetails;
     }
 
     // Create new views (invoked by the layout manager)
@@ -54,8 +60,7 @@ public class DocDetailsAdapter extends RecyclerView.Adapter<DocDetailsAdapter.Vi
         // create a new view
         LayoutInflater inflater = LayoutInflater.from(
                 parent.getContext());
-        View v =
-                inflater.inflate(R.layout.single_doc_details, parent, false);
+        View v = inflater.inflate(R.layout.single_doc_details, parent, false);
         // set the view's size, margins, paddings and layout parameters
         ViewHolder vh = new ViewHolder(v);
         return vh;
@@ -66,22 +71,25 @@ public class DocDetailsAdapter extends RecyclerView.Adapter<DocDetailsAdapter.Vi
     public void onBindViewHolder(ViewHolder holder, final int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        final String name = values.get(position);
-        holder.txtHeader.setText(name);
-        holder.txtHeader.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                remove(position);
-            }
-        });
+//        final String name = values.get(position);
+//        holder.txtHeader.setText(name);
+//        holder.txtHeader.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                remove(position);
+//            }
+//        });
 
-        holder.txtFooter.setText("Footer: " + name);
+//        holder.txtFooter.setText("Footer: " + name);
+
+        holder.txtHeader.setText(appDetails.get(position).getDocName());
+        holder.txtFooter.setText(appDetails.get(position).getTimeAndDate());
     }
 
     // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
-        return values.size();
+        return appDetails.size();
     }
 
 }

@@ -141,7 +141,7 @@ public class BookDocFrag  extends Fragment {
                 }
                 docDetails.add(new DocDetails(name, spec, id, days, times));
             }
-            mRecycler.setAdapter(new SampleAdapter(docDetails));
+            mRecycler.setAdapter(new BookDocAdapter(docDetails));
             hideProgressDialog();
         }catch (JSONException e){
             e.printStackTrace();
